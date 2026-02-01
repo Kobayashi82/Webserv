@@ -13,8 +13,6 @@
   <img src="/doc/Webserv_logo.png">
 </div>
 
-![Logo](./doc/Webserv.png)
-
 # Webserv 1.0
 
 ## 🌐 Descripción
@@ -148,3 +146,5 @@ Este proyecto está licenciado bajo la WTFPL – [Do What the Fuck You Want to P
 *"Because real men write their own web servers"*
 
 </div>
+
+![Logo](./doc/Webserv.png)
