@@ -9,6 +9,10 @@
 
 </div>
 
+<div align="center">
+  <img src="/doc/Webserv_logo.png">
+</div>
+
 ![Logo](./doc/Webserv.png)
 
 # Webserv 1.0
