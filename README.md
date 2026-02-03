@@ -10,7 +10,7 @@
 </div>
 
 <div align="center">
-  <img src="/doc/Webserv_logo.png">
+  <img src="/Webserv.png">
 </div>
 
 # Webserv 1.0
