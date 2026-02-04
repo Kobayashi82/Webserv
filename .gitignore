@@ -20,5 +20,6 @@ doc/webserv\ 22.1.pdf
 !Makefile
 !.gitignore
 !README.md
+!README_es.md
 !LICENSE
 !Webserv.png

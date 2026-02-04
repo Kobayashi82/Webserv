@@ -5,7 +5,7 @@
 ![HTTP Protocol](https://img.shields.io/badge/Protocol-HTTP-green?style=for-the-badge)
 ![C++ Language](https://img.shields.io/badge/Language-C++-red?style=for-the-badge)
 
-*Servidor web HTTP con soporte para ejecución de scripts CGI*
+*HTTP web server with CGI script execution support*
 
 </div>
 
@@ -15,22 +15,24 @@
 
 # Webserv 1.0
 
-## 🌐 Descripción
-**Webserv** es un servidor web programado en C++ con soporte para el protocolo HTTP 1.1. Está diseñado para servir cualquier página web que no requiera SSL/TLS, siempre que esté configurado correctamente.
+[README en Español](README_es.md)
 
-## ✨ Características
-- **Soporte HTTP/1.1**: Webserv acepta y procesa peticiones HTTP según el protocolo estándar.
-- **Configuración personalizable**: Se puede iniciar Webserv con archivos de configuración específicos.
-- **Soporte para CGI**: Ejecuta scripts CGI (por ejemplo, PHP, Python, etc.).
-- **Manejo de logs**: Webserv genera logs tanto de acceso como de errores.
-- **Manejo de múltiples direcciones IP y puertos**: Puede configurar varios servidores virtuales con diferentes IP y puertos.
-- **Listado de directorios**: Soporta funcionalidad de autoindex.
-- **Páginas de error personalizadas**: Páginas de error configurables para diferentes códigos HTTP.
-- **Redirecciones**: Soporta redirecciones HTTP.
-- **Limitación de solicitudes**: Tamaño máximo de cuerpo configurable.
-- **Conexiones keep-alive**: Mantiene conexiones persistentes.
+## 🌐 Description
+**Webserv** is a web server written in C++ with support for HTTP/1.1. It is designed to serve any web page that does not require SSL/TLS, as long as it is properly configured.
 
-## 🔧 Instalación
+## ✨ Features
+- **HTTP/1.1 support**: Webserv accepts and processes HTTP requests according to the standard protocol.
+- **Customizable configuration**: Webserv can be started with specific configuration files.
+- **CGI support**: Executes CGI scripts (e.g., PHP, Python, etc.).
+- **Log handling**: Webserv generates both access and error logs.
+- **Multiple IPs and ports**: Configure multiple virtual servers with different IPs and ports.
+- **Directory listing**: Supports autoindex functionality.
+- **Custom error pages**: Configurable error pages for different HTTP codes.
+- **Redirections**: Supports HTTP redirections.
+- **Request limits**: Configurable maximum body size.
+- **Keep-alive connections**: Maintains persistent connections.
+
+## 🔧 Installation
 
 ```bash
 git clone https://github.com/tu-usuario/webserv.git
@@ -38,24 +40,24 @@ cd webserv
 make
 ```
 
-## 🚀 Opciones de uso
-- **Modo gráfico**: `./webserv` abre Webserv en modo gráfico por defecto.
-- **Modo consola**: `./webserv -i` inicia Webserv en modo consola.
-- **Validación**: `./webserv -t` valida el archivo de configuración.
-- **Modo background**: `./webserv &` ejecuta Webserv en segundo plano.
-- **Archivo de configuración personalizado**: `./webserv path/to/config.cfg` utiliza un archivo de configuración específico.
+## 🚀 Usage options
+- **GUI mode**: `./webserv` opens Webserv in GUI mode by default.
+- **Console mode**: `./webserv -i` starts Webserv in console mode.
+- **Validation**: `./webserv -t` validates the configuration file.
+- **Background mode**: `./webserv &` runs Webserv in the background.
+- **Custom config file**: `./webserv path/to/config.cfg` uses a specific configuration file.
 
-Si no se especifica un archivo de configuración, se utiliza el archivo `default.cfg` en el directorio `bin`. Si este no existe, se creará automáticamente.
+If no configuration file is specified, `default.cfg` in the `bin` directory is used. If it does not exist, it will be created automatically.
 
-## ⚙️ Archivo de configuración
+## ⚙️ Configuration file
 
-El archivo de configuración permite personalizar el comportamiento del servidor. Las configuraciones pueden incluir:
+The configuration file allows customizing server behavior. Settings may include:
 
-- **Directivas globales**: Aplicables a todos los servidores virtuales.
-- **Configuración de servidores virtuales**: Especifica IP, puertos, y host administrado.
-- **Configuraciones de ubicación**: Para manejar diferentes rutas en el servidor.
+- **Global directives**: Applied to all virtual servers.
+- **Virtual server configuration**: Specifies IP, ports, and server name.
+- **Location configurations**: Handles different paths on the server.
   
-### Ejemplo de archivo de configuración:
+### Example configuration file:
 
 ```config
 http {
@@ -88,60 +90,60 @@ http {
 }
 ```
 
-### Directivas principales
-| Directiva | Descripción |
+### Main directives
+| Directive | Description |
 |-----------|-------------|
-| `body_maxsize` | Tamaño máximo permitido para el cuerpo de las solicitudes |
-| `cgi` | Configuración para procesadores CGI por extensión de archivo |
-| `listen` | Puerto o IP:Puerto en el que escuchar |
-| `server_name` | Nombre del servidor virtual |
-| `root` | Directorio raíz para los archivos servidos |
-| `index` | Archivos predeterminados a servir cuando se solicita un directorio |
-| `location` | Configuración específica para una ruta determinada |
-| `try_files` | Intenta servir archivos en un orden específico |
-| `autoindex` | Activa/desactiva el listado de directorios |
-| `error_page` | Define páginas personalizadas para códigos de error HTTP |
-| `access_log` | Ubicación del archivo de log para registrar accesos |
-| `error_log` | Ubicación del archivo de log para registrar errores |
+| `body_maxsize` | Maximum allowed request body size |
+| `cgi` | Configuration for CGI processors by file extension |
+| `listen` | Port or IP:Port to listen on |
+| `server_name` | Virtual server name |
+| `root` | Root directory for served files |
+| `index` | Default files served when a directory is requested |
+| `location` | Specific configuration for a given path |
+| `try_files` | Attempts to serve files in a specific order |
+| `autoindex` | Enables/disables directory listing |
+| `error_page` | Defines custom pages for HTTP error codes |
+| `access_log` | Access log file location |
+| `error_log` | Error log file location |
 
-## 📁 Estructura del proyecto
-El proyecto sigue una organización estructurada:
+## 📁 Project structure
+The project follows a structured organization:
 
-- **/bin**: Contiene archivos de configuración, ejecutables CGI y contenido web
-  - **/default.cfg**: Configuración por defecto
-  - **/cgi-bin**: Ejecutables CGI
-  - **/www**: Contenido web y recursos
-- **/doc**: Archivos de documentación
-- **/inc**: Archivos de cabecera organizados por funcionalidad
-  - **/Display**: Interfaz de usuario
-  - **/Log**: Sistema de logging
-  - **/Network**: Gestión de conexiones y sockets
-  - **/Protocol**: Implementación del protocolo HTTP
-  - **/Settings**: Configuración del servidor
-  - **/Thread**: Gestión de hilos
-  - **/Utils**: Utilidades comunes
-- **/src**: Archivos fuente correspondientes a la organización de cabeceras
+- **/bin**: Contains configuration files, CGI executables, and web content
+  - **/default.cfg**: Default configuration
+  - **/cgi-bin**: CGI executables
+  - **/www**: Web content and resources
+- **/doc**: Documentation files
+- **/inc**: Header files organized by functionality
+  - **/Display**: User interface
+  - **/Log**: Logging system
+  - **/Network**: Connection and socket management
+  - **/Protocol**: HTTP protocol implementation
+  - **/Settings**: Server configuration
+  - **/Thread**: Thread management
+  - **/Utils**: Common utilities
+- **/src**: Source files corresponding to the header organization
 
-## 💻 Implementación técnica
-- **Programado en C++98**
-- **Sistema multi-hilo**:
-  - Hilo principal para gestión de conexiones
-  - Hilo secundario para la interfaz de usuario en terminal
-  - Hilo dedicado para el sistema de logs
-- **Uso de epoll** para manejar múltiples conexiones de manera eficiente
-- **Análisis y generación** de solicitudes y respuestas HTTP/1.1
-- **Medidas de seguridad** contra solicitudes maliciosas
-- **Sistema de caché de archivos** para mejorar el rendimiento
+## 💻 Technical implementation
+- **Written in C++98**
+- **Multi-threaded system**:
+  - Main thread for connection management
+  - Secondary thread for terminal UI
+  - Dedicated thread for logging
+- **Uses epoll** to handle multiple connections efficiently
+- **Parsing and generation** of HTTP/1.1 requests and responses
+- **Security measures** against malicious requests
+- **File cache system** to improve performance
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está licenciado bajo la WTFPL – [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/).
+This project is licensed under the WTFPL – [Do What the Fuck You Want to Public License](http://www.wtfpl.net/about/).
 
 ---
 
 <div align="center">
 
-**🌐 Desarrollado como parte del curriculum de 42 School 🌐**
+**🌐 Developed as part of the 42 School curriculum 🌐**
 
 *"Because real men write their own web servers"*
 
