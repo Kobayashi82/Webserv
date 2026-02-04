@@ -17,20 +17,19 @@
 
 [README en Español](README_es.md)
 
-## 🌐 Description
-**Webserv** is a web server written in C++ with support for HTTP/1.1. It is designed to serve any web page that does not require SSL/TLS, as long as it is properly configured.
+`Webserv` is a web server written in C++ with support for `HTTP 1.1`. It is designed to serve any web page that does not require SSL/TLS, as long as it is properly configured.
 
 ## ✨ Features
-- **HTTP/1.1 support**: Webserv accepts and processes HTTP requests according to the standard protocol.
-- **Customizable configuration**: Webserv can be started with specific configuration files.
-- **CGI support**: Executes CGI scripts (e.g., PHP, Python, etc.).
-- **Log handling**: Webserv generates both access and error logs.
-- **Multiple IPs and ports**: Configure multiple virtual servers with different IPs and ports.
-- **Directory listing**: Supports autoindex functionality.
-- **Custom error pages**: Configurable error pages for different HTTP codes.
-- **Redirections**: Supports HTTP redirections.
-- **Request limits**: Configurable maximum body size.
-- **Keep-alive connections**: Maintains persistent connections.
+- `HTTP/1.1 support`: Webserv accepts and processes HTTP requests according to the standard protocol.
+- `Customizable configuration`: Webserv can be started with specific configuration files.
+- `CGI support`: Executes CGI scripts (e.g., PHP, Python, etc.).
+- `Log handling`: Webserv generates both access and error logs.
+- `Multiple IPs and ports`: Configure multiple virtual servers with different IPs and ports.
+- `Directory listing`: Supports autoindex functionality.
+- `Custom error pages`: Configurable error pages for different HTTP codes.
+- `Redirections`: Supports HTTP redirections.
+- `Request limits`: Configurable maximum body size.
+- `Keep-alive connections`: Maintains persistent connections.
 
 ## 🔧 Installation
 
@@ -40,12 +39,12 @@ cd webserv
 make
 ```
 
-## 🚀 Usage options
-- **GUI mode**: `./webserv` opens Webserv in GUI mode by default.
-- **Console mode**: `./webserv -i` starts Webserv in console mode.
-- **Validation**: `./webserv -t` validates the configuration file.
-- **Background mode**: `./webserv &` runs Webserv in the background.
-- **Custom config file**: `./webserv path/to/config.cfg` uses a specific configuration file.
+## 🛠️ Usage options
+- `GUI mode`: `./webserv` opens Webserv in GUI mode by default.
+- `Console mode`: `./webserv -i` starts Webserv in console mode.
+- `Validation`: `./webserv -t` validates the configuration file.
+- `Background mode`: `./webserv &` runs Webserv in the background.
+- `Custom config file`: `./webserv path/to/config.cfg` uses a specific configuration file.
 
 If no configuration file is specified, `default.cfg` in the `bin` directory is used. If it does not exist, it will be created automatically.
 
@@ -53,9 +52,9 @@ If no configuration file is specified, `default.cfg` in the `bin` directory is u
 
 The configuration file allows customizing server behavior. Settings may include:
 
-- **Global directives**: Applied to all virtual servers.
-- **Virtual server configuration**: Specifies IP, ports, and server name.
-- **Location configurations**: Handles different paths on the server.
+- `Global directives`: Applied to all virtual servers.
+- `Virtual server configuration`: Specifies IP, ports, and server name.
+- `Location configurations`: Handles different paths on the server.
   
 ### Example configuration file:
 
@@ -91,49 +90,49 @@ http {
 ```
 
 ### Main directives
-| Directive | Description |
-|-----------|-------------|
-| `body_maxsize` | Maximum allowed request body size |
-| `cgi` | Configuration for CGI processors by file extension |
-| `listen` | Port or IP:Port to listen on |
-| `server_name` | Virtual server name |
-| `root` | Root directory for served files |
-| `index` | Default files served when a directory is requested |
-| `location` | Specific configuration for a given path |
-| `try_files` | Attempts to serve files in a specific order |
-| `autoindex` | Enables/disables directory listing |
-| `error_page` | Defines custom pages for HTTP error codes |
-| `access_log` | Access log file location |
-| `error_log` | Error log file location |
+| Directive      | Description                                        |
+|----------------|----------------------------------------------------|
+| `body_maxsize` | Maximum allowed request body size                  |
+| `cgi`          | Configuration for CGI processors by file extension |
+| `listen`       | Port or IP:Port to listen on                       |
+| `server_name`  | Virtual server name                                |
+| `root`         | Root directory for served files                    |
+| `index`        | Default files served when a directory is requested |
+| `location`     | Specific configuration for a given path            |
+| `try_files`    | Attempts to serve files in a specific order        |
+| `autoindex`    | Enables/disables directory listing                 |
+| `error_page`   | Defines custom pages for HTTP error codes          |
+| `access_log`   | Access log file location                           |
+| `error_log`    | Error log file location                            |
 
 ## 📁 Project structure
 The project follows a structured organization:
 
-- **/bin**: Contains configuration files, CGI executables, and web content
-  - **/default.cfg**: Default configuration
-  - **/cgi-bin**: CGI executables
-  - **/www**: Web content and resources
-- **/doc**: Documentation files
-- **/inc**: Header files organized by functionality
-  - **/Display**: User interface
-  - **/Log**: Logging system
-  - **/Network**: Connection and socket management
-  - **/Protocol**: HTTP protocol implementation
-  - **/Settings**: Server configuration
-  - **/Thread**: Thread management
-  - **/Utils**: Common utilities
-- **/src**: Source files corresponding to the header organization
+- `/bin`: Contains configuration files, CGI executables, and web content
+  - `/default.cfg`: Default configuration
+  - `/cgi-bin`: CGI executables
+  - `/www`: Web content and resources
+- `/doc`: Documentation files
+- `/inc`: Header files organized by functionality
+  - `/Display`: User interface
+  - `/Log`: Logging system
+  - `/Network`: Connection and socket management
+  - `/Protocol`: HTTP protocol implementation
+  - `/Settings`: Server configuration
+  - `/Thread`: Thread management
+  - `/Utils`: Common utilities
+- `/src`: Source files corresponding to the header organization
 
 ## 💻 Technical implementation
-- **Written in C++98**
-- **Multi-threaded system**:
+- `Written in C++98`
+- `Multi-threaded system`:
   - Main thread for connection management
   - Secondary thread for terminal UI
   - Dedicated thread for logging
-- **Uses epoll** to handle multiple connections efficiently
-- **Parsing and generation** of HTTP/1.1 requests and responses
-- **Security measures** against malicious requests
-- **File cache system** to improve performance
+- `Uses epoll` to handle multiple connections efficiently
+- `Parsing and generation` of HTTP/1.1 requests and responses
+- `Security measures` against malicious requests
+- `File cache system` to improve performance
 
 ## 📄 License
 
