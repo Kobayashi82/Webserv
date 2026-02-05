@@ -3,19 +3,24 @@
 !.vscode/**
 .vscode/launch.json
 .vscode/settings.json
+
 !doc
 !doc/**
-doc/webserv\ 22.1.pdf
+doc/webserv\ 24.0.pdf
+
 !inc
 !inc/**
+
 !src
 !src/**
+
 !bin
 !bin/cgi-bin
 !bin/cgi-bin/**
 !bin/default.cfg
 !bin/www
 !bin/www/**
+
 !leaks
 !Makefile
 !.gitignore
