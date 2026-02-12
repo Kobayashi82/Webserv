@@ -10,7 +10,7 @@
 </div>
 
 <div align="center">
-  <img src="/Webserv.png">
+  <img src="/images/Webserv.jpg">
 </div>
 
 # Webserv 1.0
@@ -148,4 +148,4 @@ This project is licensed under the WTFPL – [Do What the Fuck You Want to Publi
 
 </div>
 
-![Logo](./doc/Webserv.png)
+![Logo](./images/Webserv_program.png)

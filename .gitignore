@@ -8,6 +8,9 @@
 !doc/**
 doc/webserv\ 24.0.pdf
 
+!images
+!images/**
+
 !inc
 !inc/**
 
@@ -27,4 +30,3 @@ doc/webserv\ 24.0.pdf
 !README.md
 !README_es.md
 !LICENSE
-!Webserv.png
